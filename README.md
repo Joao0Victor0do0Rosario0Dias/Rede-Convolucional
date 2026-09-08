@@ -1,7 +1,7 @@
-#Classificador de Gatos e Cachorros com Rede Convolucional (CNN)
+# Classificador de Gatos e Cachorros com Rede Convolucional (CNN)
 Este sistema utiliza uma arquitetura construída com Keras e TensorFlow para extrair características visuais e classificar imagens binárias. Abaixo está a explicação aprimorada do fluxo do código, dividida entre o tratamento dos dados e a arquitetura do modelo.
 
-1. Pré-processamento e Aumento de Dados (Data Augmentation)
+## 1. Pré-processamento e Aumento de Dados (Data Augmentation)
 Antes de treinar o modelo, as imagens (2.000 de gatos e 2.000 de cachorros) passam por transformações automáticas usando o ImageDataGenerator.
 
 Normalização: Os pixels, originalmente em uma escala de 0 a 255, são divididos por 255 (escala 0 a 1). Isso acelera o treinamento e estabiliza os cálculos matemáticos da rede.
@@ -10,7 +10,7 @@ Redimensionamento: Todas as imagens são padronizadas para a resolução de 64x6
 
 Data Augmentation: Para evitar overfitting (quando a rede apenas memoriza as imagens exatas), o código cria variações dinâmicas das imagens originais a cada época. Isso inclui rotação de até 7 graus, espelhamento horizontal, cisalhamento (20%), mudanças na altura (7%) e zoom (20%).
 
-2. Arquitetura da Rede (O caminho da imagem)
+## 2. Arquitetura da Rede (O caminho da imagem)
 A rede é sequencial e dividida em duas fases principais: a Extração de Características (camadas convolucionais) e a Classificação (camadas densas).
 
 Fase de Extração (Convolução e Pooling)
@@ -35,7 +35,7 @@ Dropout (20%): Durante o treinamento, desliga aleatoriamente 20% dos neurônios 
 
 Camada de Saída: Uma última camada Dense com apenas 1 unidade e função de ativação Sigmoid. Ela devolve um valor entre 0 e 1 (uma probabilidade).
 
-3. Inferência (O Loop Final)
+## 3. Inferência (O Loop Final)
 Após o modelo ser treinado e os pesos ajustados pelo otimizador Adam, o loop while True permite testes manuais:
 
 Recebe o caminho de uma imagem.
