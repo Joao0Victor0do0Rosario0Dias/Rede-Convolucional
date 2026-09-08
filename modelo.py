@@ -1,6 +1,6 @@
 from keras.models import Sequential
 from keras.layers import Conv2D,Flatten,Dense,BatchNormalization,MaxPooling2D,Dropout
-def criar_classificador_gatos_e_cachorros(input_shape=(64,64,3)):
+def criar_classificador_gatos_e_cachorros(input_shape=(64,64,3)) -> Sequential:
     classificador=Sequential()
     classificador.add(Conv2D(32,(3,3),input_shape=input_shape,activation='relu'))#recomendado 64 input_shape maior
     classificador.add(BatchNormalization())#deixa entre 0 e 1
