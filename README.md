@@ -2,6 +2,7 @@
 Este sistema utiliza uma arquitetura construída com Keras e TensorFlow para extrair características visuais e classificar imagens binárias. Abaixo está a explicação aprimorada do fluxo do código, dividida entre o tratamento dos dados e a arquitetura do modelo.
 
 ## 1. Pré-processamento e Aumento de Dados (Data Augmentation)
+o link do dataset é https://drive.google.com/drive/folders/1PX3zQFAA1dpSPPoT77jWGQflOJ0NOdTW 
 Antes de treinar o modelo, as imagens (2.000 de gatos e 2.000 de cachorros) passam por transformações automáticas usando o ImageDataGenerator.
 
 Normalização: Os pixels, originalmente em uma escala de 0 a 255, são divididos por 255 (escala 0 a 1). Isso acelera o treinamento e estabiliza os cálculos matemáticos da rede.
